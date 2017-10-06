@@ -1,28 +1,119 @@
-.App {
-  text-align: center;
-}
+* {
+  box-sizing: border-box; }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
-}
+body {
+  font-size: 1em;
+  font-family: Quicksand, Arial, sans-serif;
+  margin: 0; }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
-}
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw; }
 
-.App-title {
-  font-size: 1.5em;
-}
+#calculator {
+  width: 30em;
+  height: 40em; }
+  #calculator.inactive {
+    display: none; }
+  #calculator.active {
+    display: block; }
 
-.App-intro {
-  font-size: large;
-}
+.display {
+  border-radius: 9px 9px 0 0;
+  height: 25%;
+  background: #3b3b40;
+  position: relative; }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-}
+.main-panel {
+  display: flex;
+  height: 75%;
+  border-radius: 0 0 0 10px; }
+
+.operand_panel {
+  width: 75%;
+  height: 100%;
+  background: rgba(212, 212, 212, 0.49);
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 0 0 9px; }
+  .operand_panel .button:active {
+    background: rgba(195, 195, 195, 0.61); }
+  .operand_panel #button_zero {
+    border-radius: 0 0 0 9px;
+    flex-basis: 4px;
+    flex-grow: 2; }
+  .operand_panel #button_dot {
+    flex-basis: 0;
+    flex-grow: 1; }
+
+.result_container {
+  color: #fff;
+  font-size: 4em;
+  font-weight: 100;
+  height: 100%;
+  text-align: right;
+  position: relative; }
+  .result_container .result {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding-bottom: 12px;
+    padding-right: 41px; }
+
+.operator_panel {
+  width: 25%;
+  background: #f79331;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  border-radius: 0 0 9px 0; }
+  .operator_panel .button:active {
+    background: #eb8627; }
+  .operator_panel .button:focus {
+    background: #eb8627; }
+  .operator_panel #button_evaluate {
+    border-bottom-right-radius: 9px; }
+
+.button {
+  outline: none;
+  border: 0.5px solid grey;
+  color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 5em;
+  font-weight: 100;
+  width: 100%;
+  user-select: none;
+  flex: auto; }
+
+.operand_row {
+  display: flex;
+  height: 100%;
+  width: 100%; }
+
+.operand {
+  color: black;
+  font-size: 2em;
+  font-weight: 400; }
+
+.val_dot {
+  width: 49.5%; }
+
+@media (max-width: 800px) {
+  #calculator {
+    width: 100vw;
+    height: 100vh; }
+  .display {
+    border-radius: 0; }
+  .operand_panel {
+    border-radius: 0; }
+    .operand_panel #button_zero {
+      border-radius: 0; }
+  .operator_panel {
+    border-radius: 0; }
+    .operator_panel #button_evaluate {
+      border-radius: 0; } }
